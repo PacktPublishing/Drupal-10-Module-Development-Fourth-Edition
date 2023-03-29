@@ -1,0 +1,34 @@
+sudo: required
+language: php
+
+php:
+  - 8.1
+
+git:
+  depth: 1
+
+services:
+- docker
+
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.17.1
+  matrix:
+    - DRUPAL_VERSION=10.0.x-dev
+
+before_install:
+  - docker-compose up -d
+
+install:
+  - docker-compose exec -u root php composer install
+  - docker-compose exec -u root php chown -R www-data:www-data build
+
+before_script:
+  - docker-compose exec -u www-data php ./vendor/bin/run drupal:site-install
+
+script:
+  - docker-compose exec php ./vendor/bin/run drupal:phpcs
+  - docker-compose exec -u www-data php ./vendor/bin/phpunit
+
+notifications:
+  email: false

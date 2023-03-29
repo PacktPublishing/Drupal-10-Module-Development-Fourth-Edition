@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="${drupal.root}/core/tests/bootstrap.php" backupGlobals="true" colors="true" cacheResult="false">
+  <php>
+    <ini name="error_reporting" value="32767"/>
+    <ini name="memory_limit" value="-1"/>
+    <env name="SIMPLETEST_BASE_URL" value="${drupal.base_url}"/>
+    <env name="SIMPLETEST_IGNORE_DIRECTORIES" value="${drupal.root}"/>
+    <env name="SIMPLETEST_DB" value="mysql://${drupal.database.user}:${drupal.database.password}@${drupal.database.host}:${drupal.database.port}/${drupal.database.name}"/>
+    <env name="MINK_DRIVER_ARGS_WEBDRIVER" value='["${selenium.browser}", {"browserName":"chrome","chromeOptions":{"w3c": false, "args":["--no-sandbox", "--start-maximized", "--disable-gpu", "--window-size=1600,1200", "--disable-dev-shm-usage", "--disable-setuid-sandbox", "--disable-web-security", "--DNS-prefetch-disable", "--disable-translate", "--ignore-certificate-errors", "--test-type", "--disable-extensions", "--incognito", "--disable-infobars"]}}, "${selenium.host}:${selenium.port}/wd/hub"]'/>
+  </php>
+  <testsuites>
+    <testsuite name="unit">
+      <directory>./modules/*/tests/</directory>
+      <directory>./packt/*/*/tests/</directory>
+    </testsuite>
+    <testsuite name="kernel">
+      <directory>./packt/*/*/tests/</directory>
+    </testsuite>
+    <testsuite name="functional">
+      <directory>./packt/*/*/tests/</directory>
+    </testsuite>
+    <testsuite name="functional-javascript">
+      <directory>./packt/*/*/tests/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

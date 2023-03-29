@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * The sports module file.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function sports_cron() {
+  $database = \Drupal::database();
+  $result = $database->query("SELECT [id] FROM {teams} WHERE [id] NOT IN (SELECT [team_id] FROM {players} WHERE [team_id] IS NOT NULL)")->fetchAllAssoc('id');
+  if (!$result) {
+    return;
+  }
+
+  $ids = array_keys($result);
+  $database->delete('teams')
+    ->condition('id', $ids, 'IN')
+    ->execute();
+}

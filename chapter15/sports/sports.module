@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * The sports module file.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function sports_cron() {
+  $database = \Drupal::database();
+  $result = $database->query("SELECT [id] FROM {teams} WHERE [id] NOT IN (SELECT [team_id] FROM {players} WHERE [team_id] IS NOT NULL)")->fetchAllAssoc('id');
+  if (!$result) {
+    return;
+  }
+
+  $ids = array_keys($result);
+  $database->delete('teams')
+    ->condition('id', $ids, 'IN')
+    ->execute();
+}
+
+/**
+ * Implements hook_views_data().
+ */
+function sports_views_data() {
+  $data = [];
+
+  // Players table.
+  $data['players'] = [];
+  $data['players']['table']['group'] = t('Sports');
+  $data['players']['table']['base'] = [
+    'field' => 'id',
+    'title' => t('Players'),
+    'help' => t('Holds player data.'),
+  ];
+
+  // Player fields.
+  $data['players']['id'] = [
+    'title' => t('ID'),
+    'help' => t('The unique player ID.'),
+    'field' => [
+      'id' => 'numeric',
+    ],
+  ];
+
+  $data['players']['name'] = [
+    'title' => t('Name'),
+    'help' => t('The name of the player.'),
+    'field' => [
+      'id' => 'standard',
+    ],
+  ];
+
+  $data['players']['data'] = [
+    'title' => t('Data'),
+    'help' => t('The player data.'),
+    'field' => [
+      'id' => 'serialized',
+    ],
+  ];
+
+  $data['players']['team_id'] = [
+    'title' => t('Team ID'),
+    'help' => t('The unique team ID of the player.'),
+    'field' => [
+      'id' => 'numeric',
+    ],
+    'relationship' => [
+      'base' => 'teams',
+      'base field' => 'id',
+      'id' => 'standard',
+      'label' => t('Player team'),
+    ],
+    'argument' => [
+      'id' => 'numeric',
+    ],
+  ];
+
+  // Teams table.
+  $data['teams'] = [];
+  $data['teams']['table']['group'] = t('Sports');
+
+  // Teams fields.
+  $data['teams']['name'] = [
+    'title' => t('Name'),
+    'help' => t('The name of the team.'),
+    'field' => [
+      'id' => 'standard',
+    ],
+    'sort' => [
+      'id' => 'standard',
+    ],
+    'filter' => [
+      'id' => 'team_filter',
+    ],
+  ];
+
+  $data['teams']['description'] = [
+    'title' => t('Description'),
+    'help' => t('The description of the team.'),
+    'field' => [
+      'id' => 'standard',
+    ],
+  ];
+
+  $data['teams']['team'] = [
+    'title' => t('Team'),
+    'help' => t('The team (either an ID or a team name).'),
+    'argument' => [
+      'id' => 'team',
+    ],
+  ];
+
+  return $data;
+}

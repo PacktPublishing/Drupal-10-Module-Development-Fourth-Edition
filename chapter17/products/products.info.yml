@@ -1,0 +1,6 @@
+name: Products
+description: A module that stores product information imported from various sources
+core_version_requirement: ^10
+type: module
+dependencies:
+  - drupal:image
