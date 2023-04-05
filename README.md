@@ -1,8 +1,27 @@
-# Drupal 10 Module Development
+# Drupal 10 Module Development - Fourth Edition 
 
-This is the code repository for the book *Drupal 10 Module Development* published by Packt.
+<a href="https://www.packtpub.com/product/drupal-10-module-development-fourth-edition/9781837631803?utm_source=github&utm_medium=repository&utm_campaign="><img src="https://content.packt.com/B19546/cover_image_small.jpg" alt="Drupal 10 Module Development - Fourth Edition " height="256px" align="right"></a>
 
-**Get up and running with building powerful Drupal modules and applications**
+This is the code repository for [Drupal 10 Module Development - Fourth Edition ](https://www.packtpub.com/product/drupal-10-module-development-fourth-edition/9781837631803?utm_source=github&utm_medium=repository&utm_campaign=), published by Packt.
+
+**Develop and deliver engaging and intuitive enterprise-level apps**
+
+## What is this book about?
+Drupal 10 Module Development is a one-stop guide that dives deep into creating complex custom modules for business needs. This book is updated on the latest version of Drupal 10, which will take you through Drupal architecture, data modeling, and APIs for module development along with recent enhancements in Drupal 10 core releases.
+
+This book covers the following exciting features:
+* Gain insight into the Drupal 10 architecture for developing advanced modules
+* Master different Drupal 10 subsystems and APIs
+* Optimize data management by modeling, storing, manipulating, and processing data efficiently
+* Present data and content cleanly and securely using the theme system
+* Understand helpful functions while dealing with managed and unmanaged files
+* Ensure your Drupal app has business logic integrity with automated testing
+* Implement secure coding in Drupal
+
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1837631808) today!
+
+<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
+alt="https://www.packtpub.com/" border="5" /></a>
 
 ## Instructions and Navigations
 All of the code is organized into folders. For example, Chapter02.
@@ -17,10 +36,17 @@ hello_world.hello:
   requirements:
     _permission: 'access content'
 ```
+
 **Following is what you need for this book:**
 If you are a Drupal developer looking to learn Drupal 10 to write modules for your sites, this book is for you. Drupal site builders and PHP developers with basic object-oriented programming skills will also find this book helpful. Although not necessary, some Symfony experience will help with understanding concepts easily.
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-18).
+### Software and Hardware List
+| Chapter | Software required | OS required |
+| -------- | ------------------------------------ | ----------------------------------- |
+| 1-18 | Drupal 10 | Windows, Mac OS X, and Linux (Any) |
+
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://packt.link/XUWE3).
 
 ## Setup
 
@@ -76,6 +102,18 @@ And this command to try to automatically fix coding standards issues that pop up
 $ docker-compose exec php ./vendor/bin/run drupal:phpcbf
 ```
 
+
+### Related products
+* Drupal 10 Development Cookbook - Third Edition  [[Packt]](https://www.packtpub.com/product/drupal-10-development-cookbook-third-edition/9781803234960?utm_source=github&utm_medium=repository&utm_campaign=) [[Amazon]](https://www.amazon.com/dp/1803234962)
+
+* Digital Marketing with Drupal  [[Packt]](https://www.packtpub.com/product/digital-marketing-with-drupal/9781801071895?utm_source=github&utm_medium=repository&utm_campaign=) [[Amazon]](https://www.amazon.com/dp/1801071896)
+
+
+
 ## Get to Know the Author
 **Daniel Sipos**
-is a senior web developer specializing in Drupal. He's been working with Drupal sites since version 6, and started out, like many others, as a site builder. He's a self-taught programmer with many years' experience working professionally on complex Drupal 7 and 8 projects. In his spare time, he runs webomelette.com, a Drupal website where he writes technical articles, tips, and techniques related to Drupal development.
+is a senior web developer specializing in Drupal. He's been working with Drupal sites since version 6, and started out, like many others, as a site builder. He's a self-taught programmer with many years' experience working professionally on complex Drupal 7 and 8 projects. In his spare time, he runs webomelette, a Drupal website where he writes technical articles, tips, and techniques related to Drupal development.
+
+
+## Other books by the authors
+* Drupal 9 Module Development - - Third Edition [[Packt]](https://www.packtpub.com/product/drupal-9-module-development-third-edition/9781800204621) [[Amazon]](https://www.amazon.com/Drupal-Module-Development-building-applications/dp/1800204620?utm_source=github&utm_medium=repository&utm_campaign=)
