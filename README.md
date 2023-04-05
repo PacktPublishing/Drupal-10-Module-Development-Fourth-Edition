@@ -115,5 +115,5 @@ $ docker-compose exec php ./vendor/bin/run drupal:phpcbf
 is a senior web developer specializing in Drupal. He's been working with Drupal sites since version 6, and started out, like many others, as a site builder. He's a self-taught programmer with many years' experience working professionally on complex Drupal 7 and 8 projects. In his spare time, he runs webomelette, a Drupal website where he writes technical articles, tips, and techniques related to Drupal development.
 
 
-## Other books by the authors
+## Other books by the author
 * Drupal 9 Module Development - - Third Edition [[Packt]](https://www.packtpub.com/product/drupal-9-module-development-third-edition/9781800204621) [[Amazon]](https://www.amazon.com/Drupal-Module-Development-building-applications/dp/1800204620?utm_source=github&utm_medium=repository&utm_campaign=)
