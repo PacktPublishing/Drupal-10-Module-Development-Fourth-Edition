@@ -117,3 +117,8 @@ is a senior web developer specializing in Drupal. He's been working with Drupal 
 
 ## Other books by the author
 * Drupal 9 Module Development - - Third Edition [[Packt]](https://www.packtpub.com/product/drupal-9-module-development-third-edition/9781800204621) [[Amazon]](https://www.amazon.com/Drupal-Module-Development-building-applications/dp/1800204620?utm_source=github&utm_medium=repository&utm_campaign=)
+
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781837631803">https://packt.link/free-ebook/9781837631803 </a> </p>
